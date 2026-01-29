@@ -3,6 +3,9 @@
 ## Project Overview
 A web app replacing text-based PGA tournament tracking. Members draft 4 golfers per event, enter round scores, and compete across seasons. The app enforces strict role-based permissions (Commissioner vs Member) and complex scoring logic including CUT/WD substitution.
 
+## AI Project Stack and Conventions 
+Refer to ReadMe.md as the source of truth for Project Stack
+
 ## Critical Architecture Knowledge
 
 ### Permission Model (Must Implement Correctly)
@@ -74,12 +77,6 @@ GolferRoundScore (event_id FK, golfer_id FK, round_number 1-4, result_status, sc
 - Can only opt-in during DRAFT status
 - Commissioner can add/remove participants in DRAFT (admin override)
 
-## Development Workflow
-- Test against `/docs/CBSBest-app-MVP.txt` specifications, not assumptions
-- Create test documentation under `/docs` as needed
-- Run full test suite before marking round/event complete
-- Always verify CUT/WD substitution logic in scoring tests
-
 ## API Endpoints (High-Level Contract)
 - `/api/golfers` — GET/POST/PATCH (commissioner-only write)
 - `/api/seasons/{seasonId}/overview` — GET with standings + events
@@ -87,7 +84,3 @@ GolferRoundScore (event_id FK, golfer_id FK, round_number 1-4, result_status, sc
 - `/api/events/{eventId}/teams/{userId}/picks` — PUT (member own DRAFT, commissioner override)
 - `/api/events/{eventId}/scores?round=R` — GET/PUT (member own IN_PROGRESS, commissioner override)
 - `/api/events/{eventId}/leaderboard?round=R` — GET (computed with completeness flags)
-
-## References
-- **AI guidelines**: `/docs/ai.md`
--
