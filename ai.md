@@ -1,4 +1,4 @@
-# CBSbest App — AI Agent Instructions
+# CBSbest App — AI App Overview and Instructions
 
 ## Project Overview
 A web app replacing text-based PGA tournament tracking. Members draft 4 golfers per event, enter round scores, and compete across seasons. The app enforces strict role-based permissions (Commissioner vs Member) and complex scoring logic including CUT/WD substitution.
